@@ -5,8 +5,21 @@ class Vector3:
         self.y = y
         self.z = z
 
-    def isCloserThan(self, z):
+    def is_closer_than(self, z):
         return self.z < z
+
+    @staticmethod
+    def subdivide_region(begin, end):
+        return [
+            (Vector3(begin.x, begin.y, begin.z),
+             Vector3(end.x // 2, end.y // 2, end.z)),
+            (Vector3((begin.x + end.x)//2 + 1, begin.y, begin.z),
+             Vector3(end.x, end.y // 2, end.z)),
+            (Vector3(begin.x, (begin.y + end.y)//2 + 1, begin.z),
+             Vector3(end.x // 2, end.y, end.z)),
+            (Vector3((begin.x + end.x)//2 + 1, (begin.y + end.y)//2 + 1, begin.z),
+             Vector3(end.x, end.y, end.z))
+        ]
 
     def __repr__(self):
         return self.__str__()
