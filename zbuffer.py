@@ -7,7 +7,7 @@ def zbuffer(polygons, screen):
             position = Vector3(*pixel['position'])
             if position.is_closer_than(screen[position.x][position.y][1]):
                 screen[position.x][position.y] = (Color(*pixel['color']), 
-                                                position.z, 
-                                                screen[position.x][position.y][2])
+                                                  position.z, 
+                                                  screen[position.x][position.y][2])
 
     return screen

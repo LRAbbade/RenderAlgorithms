@@ -20,7 +20,7 @@ def load_polygons():
 
 screen = [[(DEFAULT_COLOR, DEFAULT_DEPTH, f'x={row}, y={column}')
            for column in range(WIDTH)]
-          for row in range(HEIGHT)]
+           for row in range(HEIGHT)]
 
 def print_screen():
     print('current screen:')

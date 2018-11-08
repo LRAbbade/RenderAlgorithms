@@ -25,5 +25,5 @@ def warnock(polygons, screen):
             check_region(*regions[2])
             check_region(*regions[3])
 
-
+    check_region(Vector3(), Vector3(len(screen), len(screen[0])))
     return screen
